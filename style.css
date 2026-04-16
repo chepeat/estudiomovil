@@ -1044,9 +1044,9 @@ li {
     margin-bottom: 5rem;
 }
 
-/* Si hay un número impar de tarjetas, la última ocupa todo el ancho */
+/* Si hay un número impar de tarjetas, la última ocupa todo el ancho de forma responsiva */
 .concl-grid .concl-sub-card:last-child:nth-child(odd) {
-    grid-column: span 2;
+    grid-column: 1 / -1;
 }
 
 .concl-sub-card {
