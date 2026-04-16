@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="content" style="padding: 20px;">
+        <h1>Test de PDF</h1>
+        <p>Este es un test simple para verificar que html2pdf funciona.</p>
+    </div>
+    <button id="download" style="margin: 20px; padding: 10px 20px;">Descargar PDF de Prueba</button>
+
+    <script>
+        document.getElementById('download').addEventListener('click', async () => {
+            const btn = document.getElementById('download');
+            btn.textContent = 'Procesando...';
+            btn.disabled = true;
+
+            try {
+                const element = document.getElementById('content');
+                const opt = {
+                    margin: 10,
+                    filename: 'test.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+
+                await html2pdf().set(opt).from(element).save();
+
+                btn.textContent = 'Descargar PDF de Prueba';
+                btn.disabled = false;
+                console.log('PDF generado correctamente');
+            } catch (error) {
+                console.error('Error:', error);
+                btn.textContent = 'Error - Reintentar';
+                btn.disabled = false;
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+
+</html>
