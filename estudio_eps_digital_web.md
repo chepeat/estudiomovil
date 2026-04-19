@@ -1,5 +1,5 @@
-# Educación para la Salud Digital
-## Estudio en adolescentes tras el ayuno del smartphone durante 24 horas
+# II Proyecto de EpS
+## Desafío de ayuno digital ampliado a ocho centros educativos de la provincia de Cáceres
 **Curso 2025–2026 · Zona noroeste de Extremadura**
 
 ---
